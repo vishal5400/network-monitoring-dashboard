@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-time Packet Logs</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #logs {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #logs p {
+            margin: 5px 0;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        @media (max-width: 600px) {
+            #logs {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Real-time Packet Logs</h1>
+    <div id="logs"></div> <!-- The logs will be displayed here -->
+
+    <script type="text/javascript">
+        const socket = io(); // Connect to the SocketIO server
+
+        // Function to add a new log entry to the 'logs' div
+        function addLogEntry(logEntry) {
+            const logsDiv = document.getElementById('logs');
+            const logNode = document.createElement('p');
+            logNode.textContent = logEntry;
+            logsDiv.appendChild(logNode);
+        }
+
+        // SocketIO event handler for receiving new packet logs
+        socket.on('packet', function (data) {
+            addLogEntry(data); // Add the new packet log to the webpage
+        });
+    </script>
+</body>
+</html>
