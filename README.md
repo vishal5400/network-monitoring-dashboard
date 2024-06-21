@@ -27,6 +27,7 @@ Run the Application
 python app.py
 '''
 Access the Dashboard
+
 Open your web browser and go to http://localhost:5000 to view the dashboard.
 
 Requirements
