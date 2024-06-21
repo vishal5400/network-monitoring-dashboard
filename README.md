@@ -35,6 +35,8 @@ Open your web browser and go to http://localhost:5000 to view the dashboard.
 - Python 3.x
 - Flask
 - Scapy
+- Flask-SocketIO
+- eventlet
 - HTML/CSS for the front-end
 # Usage
 1. Start Monitoring: Launch the application to begin capturing network traffic.
