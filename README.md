@@ -14,7 +14,7 @@ This project aims to create a Minimum Viable Product (MVP) for monitoring networ
 Clone the Repository
 
 ```sh
-git clone https://github.com/vishalkaushikdixit/network-monitoring-dashboard.git
+git clone https://github.com/vishal5400/network-monitoring-dashboard.git
 cd network-monitoring-dashboard
 ```
 Install Dependencies
